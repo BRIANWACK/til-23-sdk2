@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="til-23-finals",
+    name="til-23-sdk",
     version="2023.2.0",
     author="The Organizers of Today-I-Learned AI",
     author_email="",

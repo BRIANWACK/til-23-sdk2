@@ -11,6 +11,7 @@ from threading import Lock, Thread
 import cv2
 
 import flask
+import matplotlib
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
@@ -26,6 +27,7 @@ from .robots import SimRobot, ActualRobot
 class BadArgumentError(Exception):
     pass
 
+matplotlib.use('TkAgg')
 
 map_log_level = {
     'debug': logging.DEBUG,
