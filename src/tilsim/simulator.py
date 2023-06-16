@@ -317,7 +317,7 @@ def main():
     while True:
         now = time.perf_counter()
        
-        if not sim_config.proxy_real_robot:
+        if False and not sim_config.proxy_real_robot:
             # safety timeout
             if now - robot.last_changed >= robot.timeout:
                 robot.vel = (0., 0., 0.)
