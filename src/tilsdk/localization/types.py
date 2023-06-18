@@ -1,5 +1,6 @@
+from typing import Any, List, NamedTuple, Optional, Tuple, Union, overload
+
 import numpy as np
-from typing import Any, Optional, Tuple, List, Union, NamedTuple, overload
 from scipy.ndimage import distance_transform_edt
 
 ### Consts and Types ####
@@ -200,14 +201,14 @@ class SignedDistanceGrid:
         '''
         x, y = id
         neighbours = [
-            (GridLocation(x-1, y-1), _SQRT2), # NW
+            # (GridLocation(x-1, y-1), _SQRT2), # NW
             (GridLocation(x  , y-1), 1    ), # N
-            (GridLocation(x+1, y-1), _SQRT2), # NE
+            # (GridLocation(x+1, y-1), _SQRT2), # NE
             (GridLocation(x-1, y  ), 1    ), # W
             (GridLocation(x+1, y  ), 1    ), # E
-            (GridLocation(x-1, y+1), _SQRT2), # SW
+            # (GridLocation(x-1, y+1), _SQRT2), # SW
             (GridLocation(x  , y+1), 1    ), # S
-            (GridLocation(x+1, y+1), _SQRT2), # SE
+            # (GridLocation(x+1, y+1), _SQRT2), # SE
         ]
 
         results = filter(lambda n: self.in_bounds(n[0]), neighbours)
